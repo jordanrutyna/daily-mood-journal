@@ -56,7 +56,7 @@ saveButton.addEventListener('click', () => {
 
   // Fetch and display a quote
   fetchQuote(timestamp2);
-  loadPastEntries();
+//   loadPastEntries();
 });
 
   function fetchQuote(timestamp) {
@@ -67,6 +67,7 @@ saveButton.addEventListener('click', () => {
         quoteDisplay.textContent = quote;
 
         localStorage.setItem(`quote-${timestamp}`, quote);
+        loadPastEntries();
       })
       .catch(err => {
         quoteDisplay.textContent = "Could not fetch quote. Try again later.";
